@@ -189,7 +189,7 @@ function manageShortage(managedItem, initial_item_slot, final_item_slot)
         turn(FacingAngle, true, 4)
         os.startTimer(1)
         press, key = os.pullEvent()
-    until (key == 257)
+    until (key == 28)
     clearLines(4,10)
     current_slot[managedItem] = 1
     shortage[managedItem] = false
@@ -476,9 +476,9 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
     textOutput("Press enter once you have chosen all the options you wanted to activate.", 1, 11, 0)
     while true do
         press, key = os.pullEvent()
-        if press == "key" and key == 257 then
+        if press == "key" and key == 28 then
             break
-        elseif key == 67 then
+        elseif key == 46 then
             if Chest_approval then
                 Chest_approval = false
                 textOutput("", 10, 9, 11)
@@ -486,7 +486,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
                 Chest_approval = true
                 textOutput("Chests,", 10, 9, 11)
             end
-        elseif key == 69 then
+        elseif key == 18 then
             if enderchest then
                 enderchest = not(enderchest)
                 textOutput("", 10, 9, 11)
@@ -495,7 +495,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
                 enderchest = true
                 textOutput("Enderchest,", 10, 9, 11)
             end
-        elseif key == 84 then
+        elseif key == 20 then
             if Torch_approval then
                 Torch_approval = false
                 textOutput("", 1, 9, 8)
@@ -503,7 +503,7 @@ if (io.open("favorite", "r") == nil) or ((io.open("favorite", "r") ~= nil) and (
                 Torch_approval = true
                 textOutput("Torches,", 1, 9, 8)
             end
-        elseif key == 80 then
+        elseif key == 25 then
             if throw_stuff then
                 throw_stuff = not(throw_stuff)
                 textOutput("", 22, 9, 12)           
@@ -542,10 +542,10 @@ textOutput("Else, press enter to skip this step.", 1, 10, 0)
 torches_slots, chests_slots, garbage_slots = 0, 0, 0    
 while true do
     press, key = os.pullEvent()
-    if press == "key" and key == 257 then
+    if press == "key" and key == 28 then
         fuel_slots = 1
         break
-    elseif key == 83 then
+    elseif key == 31 then
         repeat
             turtle.select(1)
             resetScreen()
@@ -623,7 +623,7 @@ end
 textOutput("Press enter to start", 1, 11, 0)
 while true do
     press, key = os.pullEvent()
-    if press == "key" and key == 257 then
+    if press == "key" and key == 28 then
         break
     end 
 end
